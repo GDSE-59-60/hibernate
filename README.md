@@ -1,7 +1,7 @@
 Hibernate Module for GDSE59/60
 ==================================
 
-Day 01 we are talking about
+Day 01 we are talking about.
             
             * Create a project
             * Gathering all Libraries
