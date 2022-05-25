@@ -15,8 +15,10 @@ public class AppInitializer {
         c1.setSalary(200000);
         c1.setAddress("Panadura");
 
+        // get a new session
         Session session = FactoryConfiguration.getInstance().getSession();
 
+        // transaction begin
         Transaction transaction = session.beginTransaction();
 
         session.save(c1);
