@@ -1,5 +1,5 @@
-import lk.ijse.hibernate.embeded.Name;
-import lk.ijse.hibernate.entity.Customer;
+import lk.ijse.hibernate.entity.Laptop;
+import lk.ijse.hibernate.entity.Student;
 import lk.ijse.hibernate.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,17 +10,16 @@ import org.hibernate.Transaction;
 */
 public class AppInitializer {
     public static void main(String[] args) {
+        //One to One Relation
+        /*Student student = new Student();
+        student.setsId("S001");
+        student.setName("Danuja");
+        student.setAddress("Galle");
 
-        Name name = new Name();
-        name.setFirstName("Danuja");
-        name.setSecondName("Vimukthi");
-        name.setLastName("Deshan");
-
-        Customer c1 = new Customer();
-        c1.setId("C001");
-        c1.setSalary(200000);
-        c1.setAddress("Panadura");
-        c1.setName(name);
+        Laptop laptop = new Laptop();
+        laptop.setCode("L001");
+        laptop.setModel("HP");
+        laptop.setStudent(student);
 
         // get a new session
         Session session = FactoryConfiguration.getInstance().getSession();
@@ -28,10 +27,14 @@ public class AppInitializer {
         // transaction begin
         Transaction transaction = session.beginTransaction();
 
-        session.save(c1);
+        session.save(student);
+        session.save(laptop);
 
         transaction.commit();
 
         session.close();
+*/
+
+
     }
 }

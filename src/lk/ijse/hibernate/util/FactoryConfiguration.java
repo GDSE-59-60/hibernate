@@ -1,6 +1,7 @@
 package lk.ijse.hibernate.util;
 
-import lk.ijse.hibernate.enitity.Customer;
+import lk.ijse.hibernate.entity.Laptop;
+import lk.ijse.hibernate.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -18,7 +19,9 @@ public class FactoryConfiguration {
     private FactoryConfiguration() {
         // configure() -> load and config Hibernate.cfg.xml file to SessionFactory
         // addAnnotatedClass() -> define which Entity that gonna use to Persist
-        Configuration configuration = new Configuration().configure().addAnnotatedClass(Customer.class);
+        Configuration configuration = new Configuration().configure()
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Laptop.class);
 
         // build a SessionFactory and assign it to sessionFactory reference
         sessionFactory = configuration.buildSessionFactory();
