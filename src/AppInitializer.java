@@ -1,4 +1,5 @@
-import lk.ijse.hibernate.enitity.Customer;
+import lk.ijse.hibernate.embeded.Name;
+import lk.ijse.hibernate.entity.Customer;
 import lk.ijse.hibernate.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -9,11 +10,17 @@ import org.hibernate.Transaction;
 */
 public class AppInitializer {
     public static void main(String[] args) {
+
+        Name name = new Name();
+        name.setFirstName("Danuja");
+        name.setSecondName("Vimukthi");
+        name.setLastName("Deshan");
+
         Customer c1 = new Customer();
         c1.setId("C001");
-        c1.setName("Kamal");
         c1.setSalary(200000);
         c1.setAddress("Panadura");
+        c1.setName(name);
 
         // get a new session
         Session session = FactoryConfiguration.getInstance().getSession();
