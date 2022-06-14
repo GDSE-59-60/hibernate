@@ -1,6 +1,8 @@
 package lk.ijse.hibernate.util;
 
 import lk.ijse.hibernate.entity.Laptop;
+import lk.ijse.hibernate.entity.Owner;
+import lk.ijse.hibernate.entity.Pet;
 import lk.ijse.hibernate.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -21,7 +23,9 @@ public class FactoryConfiguration {
         // addAnnotatedClass() -> define which Entity that gonna use to Persist
         Configuration configuration = new Configuration().configure()
                 .addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Laptop.class);
+                .addAnnotatedClass(Laptop.class)
+                .addAnnotatedClass(Owner.class)
+                .addAnnotatedClass(Pet.class);
 
         // build a SessionFactory and assign it to sessionFactory reference
         sessionFactory = configuration.buildSessionFactory();
